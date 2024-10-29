@@ -1,14 +1,14 @@
 package utilities;
 /**
  * <p>
- * The <code>MyQueue</code> interface represents a first-in-first-out (FIFO) queue of objects.
+ * The <code>QueueADT</code> interface represents a first-in-first-out (FIFO) queue of objects.
  * This interface defines all the basic operations that a queue should support.
  * Implementing classes must ensure proper queue behavior and handle edge cases appropriately.
  * </p>
  * 
  * @param <E> The type of elements this queue holds
  */
-public interface MyQueue<E> {
+public interface QueueADT<E> {
     /**
      * Adds an element to the end of the queue.
      * 
