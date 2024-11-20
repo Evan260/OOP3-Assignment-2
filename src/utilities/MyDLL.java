@@ -1,122 +1,125 @@
 package utilities;
+
 /**
- * MyDList.java
- *
- * @author Justin Nielsen
- * @version 1.2
- * 
- * Class Definition: This code is for editing a list. Adding/subtracting from the front and back of it
- * using references from MyDLLNode.java to complete these operations
- */
-
-
+* MyDList.java
+*
+* A doubly-linked list implementation that allows for adding and removing elements
+* from both ends of the list. Uses MyDLLNode for node implementation.
+*/
 public class MyDLL<E> {
-	//references to all the nodes created in MyDLLNode
-    private MyDLLNode<E> head; 
-    private MyDLLNode<E> tail; 
-    private int size;       
+   // Instance variables for list structure
+   private MyDLLNode<E> head;  // First node in the list
+   private MyDLLNode<E> tail;  // Last node in the list 
+   private int size;           // Number of elements in the list
 
-    // Constructor to initialize the doubly linked list
-    public MyDLL() {
-        this.head = null;
-        this.tail = null;
-        this.size = 0;
-    }
+   /**
+    * Constructs an empty doubly linked list.
+    */
+   public MyDLL() {
+       this.head = null;
+       this.tail = null;
+       this.size = 0;
+   }
 
-    // Returns the first node/head of list
-    public MyDLLNode<E> getHead() {
-    	//cant return nothing
-        if (head == null) {
-            throw new IllegalStateException("List is empty");
-        }
-        return head;
-    }
+   /**
+    * Returns the first node in the list.
+    * @return The head node
+    * @throws IllegalStateException if the list is empty
+    */
+   public MyDLLNode<E> getHead() {
+       if (head == null) {
+           throw new IllegalStateException("List is empty");
+       }
+       return head;
+   }
 
-    // Adds a new node at the front of the list
-    public void addFirst(E item) {
-    	//creates
-        MyDLLNode<E> newNode = new MyDLLNode<>(item);
-        //list is empty, set head/tail to new node
-        if (head == null) {  
-        	head = tail = newNode;
-        //head is not null, head is not put in the front
-        } else {
-            newNode.next = head;   
-            head.prev = newNode;   
-            head = newNode;        
-        }
-        //increase size of list
-        size++; 
-    }
+   /**
+    * Adds a new element to the front of the list.
+    * @param item The element to add
+    */
+   public void addFirst(E item) {
+       MyDLLNode<E> newNode = new MyDLLNode<>(item);
+       if (head == null) {
+           head = tail = newNode;
+       } else {
+           newNode.next = head;
+           head.prev = newNode;
+           head = newNode;
+       }
+       size++;
+   }
 
-    // Adds a new node at the end of the list
-    public void addLast(E item) {
-    	//creates
-        MyDLLNode<E> newNode = new MyDLLNode<>(item);
-        //if list is empty make head/tail be the new node
-        if (tail == null) {  
-            head = tail = newNode;
-        //else put tail on the back of the list
-        } else {
-            newNode.prev = tail;  
-            tail.next = newNode;  
-            tail = newNode;     
-        }
-        //make list size bigger
-        size++;  
-    }
+   /**
+    * Adds a new element to the end of the list.
+    * @param item The element to add
+    */
+   public void addLast(E item) {
+       MyDLLNode<E> newNode = new MyDLLNode<>(item);
+       if (tail == null) {
+           head = tail = newNode;
+       } else {
+           newNode.prev = tail;
+           tail.next = newNode;
+           tail = newNode;
+       }
+       size++;
+   }
 
-    // Removes the first element of the list and returns it
-    public E removeFirst() {
-    	//cant remove if there is nothing there
-        if (head == null) {
-            throw new IllegalStateException("List is empty");
-        }
-        //element to be returned
-        E removedElement = head.element;
-        //Checking if there is just ONE node
-        if (head == tail) { 
-            head = tail = null;
-        //move head to next node and prev to null "deleting"
-        } else {
-            head = head.next;  
-            head.prev = null;  
-        }
-        //lower size of list
-        size--;
-        //return the previously stored element
-        return removedElement;
-    }
+   /**
+    * Removes and returns the first element in the list.
+    * @return The removed element
+    * @throws IllegalStateException if the list is empty
+    */
+   public E removeFirst() {
+       if (head == null) {
+           throw new IllegalStateException("List is empty");
+       }
+       
+       E removedElement = head.element;
+       if (head == tail) {
+           head = tail = null;
+       } else {
+           head = head.next;
+           head.prev = null;
+       }
+       size--;
+       return removedElement;
+   }
 
-    // Removes last item in a list and returns it
-    public E removeLast() {
-    	//cant remove if its empty
-        if (head == null) {
-            throw new IllegalStateException("List is empty");
-        }
-        //element to be returned
-        E removedElement = tail.element; 
-        //checking if there is just ONE node
-        if (head == tail) { 
-            head = tail = null;
-        //if there is remove the last by setting it to null
-        } else {
-            tail = tail.prev;  
-            tail.next = null;
-        }
-        //lower size of list
-        size--; 
-        //return ealier saved element
-        return removedElement;
-    }
+   /**
+    * Removes and returns the last element in the list.
+    * @return The removed element
+    * @throws IllegalStateException if the list is empty
+    */
+   public E removeLast() {
+       if (head == null) {
+           throw new IllegalStateException("List is empty");
+       }
+       
+       E removedElement = tail.element;
+       if (head == tail) {
+           head = tail = null;
+       } else {
+           tail = tail.prev;
+           tail.next = null;
+       }
+       size--;
+       return removedElement;
+   }
 
-    // Returns the size of the list
-    public int size() {
-        return size;
-    }
+   /**
+    * Returns the current size of the list.
+    * @return Number of elements in the list
+    */
+   public int size() {
+       return size;
+   }
 
-    // Checks if the list is empty
-    public boolean isEmpty() {
-        return size == 0;
-    }
+   /**
+    * Checks if the list is empty.
+    * @return true if the list contains no elements
+    */
+   public boolean isEmpty() {
+       return size == 0;
+   }
 }
