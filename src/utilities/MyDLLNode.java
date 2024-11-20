@@ -12,11 +12,11 @@ package utilities;
 public class MyDLLNode<E> {
 	//creating the elements of the node. current, next, prev
     E element;            
-    MyNode<E> next;      
-    MyNode<E> prev;       
+    MyDLLNode<E> next;      
+    MyDLLNode<E> prev;       
 
     // Constructor to initialize the node with an element
-    public MyNode(E element) {
+    public MyDLLNode(E element) {
         this.element = element;
         this.next = null;
         this.prev = null;
@@ -27,12 +27,12 @@ public class MyDLLNode<E> {
     }
 
     //gets the next node
-    public MyNode<E> getNext() {
+    public MyDLLNode<E> getNext() {
         return next;  
     }
 
     //gets the rprevious node
-    public MyNode<E> getPrev() {
+    public MyDLlNode<E> getPrev() {
         return prev;  
     }
 }
