@@ -32,7 +32,7 @@ public class MyDLLNode<E> {
     }
 
     //gets the rprevious node
-    public MyDLlNode<E> getPrev() {
+    public MyDLLNode<E> getPrev() {
         return prev;  
     }
 }
