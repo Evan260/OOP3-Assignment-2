@@ -1,4 +1,4 @@
-package exceptions;
+package utilities;
 
 public class EmptyQueueException extends Exception{
 	
