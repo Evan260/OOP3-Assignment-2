@@ -1,5 +1,6 @@
-package adt;
+package ADT;
 
+import implementations.Iterator;
 import java.io.Serializable;
 
 /**

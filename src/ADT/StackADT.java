@@ -1,4 +1,4 @@
-package adt;
+package ADT;
 
 import java.util.*;
 import java.io.*;

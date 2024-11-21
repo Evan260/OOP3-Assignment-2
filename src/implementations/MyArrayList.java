@@ -1,8 +1,9 @@
 package implementations;
 
+import implementations.Iterator;
 import java.util.NoSuchElementException;
 
-import adt.ListADT;
+import ADT.ListADT;
 
 public class MyArrayList<E> implements ListADT<E> {
 	private static final int DEFAULT_CAPACITY = 10;
