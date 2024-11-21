@@ -1,3 +1,5 @@
+// This file was provided by the teacher. It cannot be modified
+
 package ADT;
 
 import java.util.*;
