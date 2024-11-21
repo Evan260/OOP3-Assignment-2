@@ -1,8 +1,6 @@
 package implementations;
 
-import implementations.Iterator;
 import java.util.NoSuchElementException;
-
 import ADT.ListADT;
 
 public class MyArrayList<E> implements ListADT<E> {
