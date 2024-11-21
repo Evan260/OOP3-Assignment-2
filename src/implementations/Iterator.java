@@ -1,3 +1,5 @@
+// This file was provided by the teacher. It cannot be modified
+
 package implementations;
 
 import java.util.NoSuchElementException;
