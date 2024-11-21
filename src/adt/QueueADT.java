@@ -1,4 +1,4 @@
-package utilities;
+package adt;
 
 import exceptions.EmptyQueueException;
 import java.io.*;

@@ -1,4 +1,4 @@
-package utilities;
+package adt;
 
 import java.util.*;
 import java.io.*;

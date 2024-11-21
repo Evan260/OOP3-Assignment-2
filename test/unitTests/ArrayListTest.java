@@ -8,9 +8,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import DLL.MyDLL;
+import implementations.Iterator;
 import implementations.MyArrayList;
-import implementations.MyDLL;
-import utilities.Iterator;
 
 /**
  * @author kitty, maryam

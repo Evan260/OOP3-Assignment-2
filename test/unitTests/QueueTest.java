@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import exceptions.EmptyQueueException;
-import utilities.Iterator;
+import implementations.Iterator;
 import implementations.MyQueue;
 
 /**
@@ -90,7 +90,7 @@ public class QueueTest
 
 	/**
 	 * Test method for
-	 * {@link implementations.MyQueue#equals(utilities.QueueADT)}
+	 * {@link implementations.MyQueue#equals(adt.QueueADT)}
 	 * to return true when two queues are equal.
 	 */
 	@Test
@@ -112,7 +112,7 @@ public class QueueTest
 
 	/**
 	 * Test method for
-	 * {@link implementations.MyQueue#equals(utilities.QueueADT)}
+	 * {@link implementations.MyQueue#equals(adt.QueueADT)}
 	 * to return false when two queues are not equal.
 	 * @throws EmptyQueueException 
 	 */
@@ -385,7 +385,7 @@ public class QueueTest
 
 	/**
 	 * Test method for 
-	 * {@link utilities.QueueADT#size()}
+	 * {@link adt.QueueADT#size()}
 	 * to return the size of the queue when the queue has one item.
 	 */
 	@Test
@@ -397,7 +397,7 @@ public class QueueTest
 	
 	/**
 	 * Test method for 
-	 * {@link utilities.QueueADT#size()}
+	 * {@link adt.QueueADT#size()}
 	 * to return the size of the queue when the queue has multiple items.
 	 */
 	@Test
