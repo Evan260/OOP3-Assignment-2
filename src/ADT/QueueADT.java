@@ -1,5 +1,6 @@
-package utilities;
+package ADT;
 
+import implementations.Iterator;
 import exceptions.EmptyQueueException;
 import java.io.*;
 

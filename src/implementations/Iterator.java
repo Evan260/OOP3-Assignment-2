@@ -1,4 +1,4 @@
-package utilities;
+package implementations;
 
 import java.util.NoSuchElementException;
 
@@ -13,8 +13,7 @@ import java.util.NoSuchElementException;
  *
  * @param <E> The type of element this iterator returns.
  */
-public interface Iterator<E>
-{
+public interface Iterator<E> {
 	/**
 	 * Returns <code>true</code> if the iteration has more elements. (In other
 	 * words, returns <code>true</code> if <code>next()</code> would return an
