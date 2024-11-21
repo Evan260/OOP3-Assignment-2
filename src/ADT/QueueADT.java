@@ -2,8 +2,9 @@
 
 package ADT;
 
-import implementations.Iterator;
 import exceptions.EmptyQueueException;
+import utilities.Iterator;
+
 import java.io.*;
 
 /**

@@ -2,8 +2,9 @@
 
 package ADT;
 
-import implementations.Iterator;
 import java.io.Serializable;
+
+import utilities.Iterator;
 
 /**
  * <p>
