@@ -1,6 +1,5 @@
-package DLL;
+package implementations;
 
-import implementations.Iterator;
 import ADT.ListADT;
 import java.util.NoSuchElementException;
 

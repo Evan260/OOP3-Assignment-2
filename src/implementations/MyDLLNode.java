@@ -1,4 +1,4 @@
-package DLL;
+package implementations;
 
 /**
  * A generic node class for a Doubly Linked List (DLL).
