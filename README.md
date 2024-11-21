@@ -52,7 +52,7 @@ src/
 │   ├── ListADT.java
 │   ├── QueueADT.java
 │   ├── XMLParser.java
-│   └──StackADT.java
+│   └── StackADT.java
 │── DLL
 │   ├── MyDLL.java
 │   └── MyDLLNode.java
