@@ -48,16 +48,21 @@ The parser will analyze the XML file and output any syntax errors found, includi
 
 ```
 src/
-├── utilities/
-│   ├── MyArrayList.java
+├── ADT
+│   ├── ListADT.java
+│   ├── QueueADT.java
+│   ├── XMLParser.java
+│   └──StackADT.java
+│── DLL
 │   ├── MyDLL.java
-│   ├── MyDLLNode.java
-│   ├── MyStack.java
-│   ├── MyQueue.java
-│   ├── StackADT.java
-│   └── QueueADT.java
-└── exceptions/
-    └── EmptyQueueException.java
+│   └── MyDLLNode.java
+│── exceptions/
+│   └── EmptyQueueException.java
+└── Implementations
+    ├── Iterator.java
+    ├── MyArrayList.java
+    └── MyStack.java
+
 ```
 
 ## Implementation Details
