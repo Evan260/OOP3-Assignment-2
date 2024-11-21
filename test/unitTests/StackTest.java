@@ -11,7 +11,6 @@ import org.junit.Test;
 
 import implementations.Iterator;
 import implementations.MyStack;
-
 /**
  * @author kitty, maryam
  * @version 3.2 Aug. 28, 2024   
@@ -245,7 +244,7 @@ public class StackTest
 		stack.push( four );
 		stack.push( five );
 
-		Iterator<Integer> it = stack.iterator();
+		java.util.Iterator<Integer> it = stack.iterator();
 		
 		assertTrue(it.hasNext());
 		
@@ -272,7 +271,7 @@ public class StackTest
 	@Test
 	public void testIterator_Empty()
 	{
-		Iterator<Integer> it = stack.iterator();
+		java.util.Iterator<Integer> it = stack.iterator();
 		
 		assertFalse(it.hasNext());
 		
