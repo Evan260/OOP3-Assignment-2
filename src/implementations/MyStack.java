@@ -1,9 +1,10 @@
 package implementations;
 
 import java.util.EmptyStackException;
-import ADT.StackADT;
-import java.util.Iterator;
 import java.util.NoSuchElementException;
+
+import utilities.Iterator;
+import utilities.StackADT;
 
 public class MyStack<E> implements StackADT<E> {
     private MyArrayList<E> elements;

@@ -1,10 +1,8 @@
 // This file was provided by the teacher. It cannot be modified
 
-package ADT;
+package utilities;
 
 import java.io.Serializable;
-
-import utilities.Iterator;
 
 /**
  * <p>

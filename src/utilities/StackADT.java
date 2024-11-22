@@ -1,6 +1,6 @@
 // This file was provided by the teacher. It cannot be modified
 
-package ADT;
+package utilities;
 
 import java.util.*;
 import java.io.*;

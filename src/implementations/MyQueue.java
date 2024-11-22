@@ -1,8 +1,8 @@
 package implementations;
 
-import ADT.QueueADT;
 import exceptions.EmptyQueueException;
 import utilities.Iterator;
+import utilities.QueueADT;
 
 import java.util.Arrays;
 

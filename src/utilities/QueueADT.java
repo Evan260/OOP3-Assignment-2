@@ -1,10 +1,8 @@
 // This file was provided by the teacher. It cannot be modified
 
-package ADT;
+package utilities;
 
 import exceptions.EmptyQueueException;
-import utilities.Iterator;
-
 import java.io.*;
 
 /**
