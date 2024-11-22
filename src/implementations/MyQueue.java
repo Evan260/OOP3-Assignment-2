@@ -179,12 +179,12 @@ public class MyQueue<E> implements QueueADT<E> {
      * @return true if the specified object is equal to this queue.
      */
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
+    public boolean equals(QueueADT<E> that) {
+        if (this == that)
             return true;
-        if (!(obj instanceof QueueADT<?>))
+        if (!(that instanceof QueueADT<?>))
             return false;
-        QueueADT<?> other = (QueueADT<?>) obj;
+        QueueADT<?> other = (QueueADT<?>) that;
         if (this.size() != other.size())
             return false;
         
@@ -194,9 +194,4 @@ public class MyQueue<E> implements QueueADT<E> {
         return Arrays.equals(thisArray, otherArray);
     }
 
-	@Override
-	public boolean equals(QueueADT<E> that) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 }
