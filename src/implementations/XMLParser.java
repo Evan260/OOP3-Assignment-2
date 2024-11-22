@@ -3,74 +3,92 @@ package implementations;
 import java.io.*;
 import java.util.*;
 
+/**
+ * XMLParser.java
+ * 
+ * @author Team Riju
+ * 
+ * A XML parser implementation that validates XML tag structure and reports errors.
+ * This parser uses a stack-based approach to match opening and closing XML tags,
+ * and implements error detection for common XML structural issues. It processes
+ * XML files line by line and validates tag pairs while handling special cases
+ * like self-closing tags.
+ * 
+ * The parser has three data structures:
+ * - A stack for tracking opening tags
+ * - An error queue for collecting mismatched or problematic tags
+ * - An extras queue for handling orphaned or unmatched tags
+ * 
+ * The implementation can detect and report various XML structural errors including:
+ * - Missing start tags
+ * - Missing end tags
+ * - Mismatched tag pairs
+ * - Extra tags
+ * - Improperly nested tags
+ *
+ * @param <E> The type of elements held in the internal data structures.
+ */
 public class XMLParser {
-	
-	//the stack
-    private Stack<String> stack; 
-    //a queue to hold errors
-    private Queue<String> errorQ;
-    //a queue for anything else
-    private Queue<String> extrasQ;
+    private Stack<String> stack;  // The stack
+    private Queue<String> errorQ;  // A queue to hold errors
+    private Queue<String> extrasQ;  // A queue for anything else
 
     public XMLParser() {
-    	//setting all the previous variables to their respective type
+    	// Set the variables to their respective type
         stack = new Stack<>();
         errorQ = new LinkedList<>();
         extrasQ = new LinkedList<>();
     }
 
-    //method to read XML file
+    // Method to read XML file
     public List<String> readXML(String filePath) throws IOException {
-    	//create a arraylist to hold the xml tags
         List<String> xmlTags = new ArrayList<>();
-        //create a new reader
         BufferedReader reader = new BufferedReader(new FileReader(filePath));
         String line;
-        //checks for all content in the reader
+        
+        // Check all content in the reader
         while ((line = reader.readLine()) != null) {
             xmlTags.add(line.trim());
         }
-        //close reader and return xmltags
+        
         reader.close();
         return xmlTags;
     }
-    //method to parse following kitty's structure
+    // Method to parse following kitty's structure
     public void parse(List<String> xmlTags) {
-    	//for every tag in xmltags
         for (String tag : xmlTags) {
-        	//if selfclosing ignore
+        
             if (isSelfClosingTag(tag)) {
                 continue;
-            //if starttag push on stack
-            } else if (isStartTag(tag)) {
+            }
+            else if (isStartTag(tag)) {
                 stack.push(tag);
-            //if endtag 
-            
-            
-            } else if (isEndTag(tag)) {
-            	//if matches top, pop
+            }
+             else if (isEndTag(tag)) {
+            	// If matches top, pop
                 if (!stack.isEmpty() && stack.peek().equals(tag)) {
                     stack.pop();
-                    
-                //if matches head of errorq, dequeue
-                } else if (!errorQ.isEmpty() && errorQ.peek().equals(tag)) {
+                } 
+                // If matches head of errorq, dequeue
+                else if (!errorQ.isEmpty() && errorQ.peek().equals(tag)) {
                     errorQ.poll();
-                    
-                //if stack is empty, add to errorq
-                } else if (stack.isEmpty()) {
+                } 
+                // If stack is empty, add to errorq
+                else if (stack.isEmpty()) {
                     errorQ.offer(tag);
-                    
-                //else search for matching start tag
-                } else {
+                }  
+                // Else search for matching start tag
+                 else {
                     boolean foundMatch = false;
-                    //find match for end tag
+                    // Find match for end tag
                     while (!stack.isEmpty()) {
-                    	//is top of stack the end tag, yes = found and break
+                    	// If top of stack the end tag, yes = found and break
                         if (stack.peek().equals(tag)) {
                             foundMatch = true;
                             break;
-                        //did not find a match so pop it off into extras
-                        } else {
+                        }
+                        // Did not find a match so pop it off into extras
+                        else {
                             extrasQ.offer(stack.pop());
                         }
                     }
@@ -90,11 +108,11 @@ public class XMLParser {
             }
         }
 
-        //deals with what is left over
+        // Deals with what is left over
         handleRemaining();
     }
     
-    //deals with any remaining tags leftover after the parse
+    // Deal with any remaining tags left over after the parse
     private void handleRemaining() {
         // If stack is not empty, pop each element into errorQ
         while (!stack.isEmpty()) {
@@ -106,11 +124,13 @@ public class XMLParser {
             while (!extrasQ.isEmpty()) {
                 System.out.println("Error: Extra element " + extrasQ.poll());
             }
-        } else if (!extrasQ.isEmpty() && errorQ.isEmpty()) {
+        }
+        else if (!extrasQ.isEmpty() && errorQ.isEmpty()) {
             while (!errorQ.isEmpty()) {
                 System.out.println("Error: Missing start tag " + errorQ.poll());
             }
-        } else {
+        }
+        else {
             // Both queues are not empty, peek both
             while (!errorQ.isEmpty() && !extrasQ.isEmpty()) {
                 if (!errorQ.peek().equals(extrasQ.peek())) {

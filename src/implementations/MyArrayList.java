@@ -5,6 +5,16 @@ import java.util.NoSuchElementException;
 import utilities.Iterator;
 import utilities.ListADT;
 
+/**
+ * MyArrayList.java
+ * 
+ * @author Team Riju
+ *  
+ * A generic array-based implementation of the ListADT interface.
+ * This class provides a resizable array implementation with dynamic capacity adjustment.
+ * 
+ * @param <E> the type of elements stored in this list
+ */
 public class MyArrayList<E> implements ListADT<E> {
 	private static final int DEFAULT_CAPACITY = 10;
 	private E[] elements;

@@ -6,6 +6,16 @@ import java.util.NoSuchElementException;
 import utilities.Iterator;
 import utilities.StackADT;
 
+/**
+ * MyQueue.java
+ * 
+ * @author Team Riju
+ * 
+ * A generic array-based implementation of the ListADT interface.
+ * This class provides a resizable array implementation with dynamic capacity adjustment.
+ *
+ * @param <E> The type of elements held in this queue.
+ */
 public class MyStack<E> implements StackADT<E> {
     private MyArrayList<E> elements;
     
@@ -54,7 +64,7 @@ public class MyStack<E> implements StackADT<E> {
 
         // Loop through the elements in reverse order to match the expected order
         for (int i = 0; i < elements.size(); i++) {
-            array[i] = elements.get(elements.size() - 1 - i); // Get elements in reverse order
+            array[i] = elements.get(elements.size() - 1 - i);  // Get elements in reverse order
         }
 
         return array;
@@ -103,7 +113,7 @@ public class MyStack<E> implements StackADT<E> {
     }
 
     private class StackIterator implements Iterator<E> {
-        private int index; // Start at the top of the stack (last added element)
+        private int index;  // Start at the top of the stack (last added element)
         private final E[] iteratorElements;
 
         @SuppressWarnings("unchecked")
@@ -112,9 +122,9 @@ public class MyStack<E> implements StackADT<E> {
             iteratorElements = (E[]) new Object[size()];
             // Populate the array with the elements in LIFO order (from top to bottom)
             for (int i = 0; i < size(); i++) {
-                iteratorElements[i] = elements.get(size() - 1 - i); // Reverse the order
+                iteratorElements[i] = elements.get(size() - 1 - i);  // Reverse the order
             }
-            this.index = 0; // Start the iteration from the top (last element added)
+            this.index = 0;  // Start the iteration from the top (last element added)
         }
 
         @Override
@@ -127,7 +137,7 @@ public class MyStack<E> implements StackADT<E> {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            return iteratorElements[index++]; // Return the next element in LIFO order
+            return iteratorElements[index++];  // Return the next element in LIFO order
         }
     }
 

@@ -7,6 +7,10 @@ import utilities.QueueADT;
 import java.util.Arrays;
 
 /**
+ * MyQueue.java
+ * 
+ * @author Team Riju
+ * 
  * The MyQueue class provides a queue implementation using a doubly-linked list (MyDLL) as the underlying storage.
  * It implements the QueueADT interface, providing standard queue operations.
  *

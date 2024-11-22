@@ -1,6 +1,10 @@
 package implementations;
 
 /**
+ * MyDLLNide.java
+ * 
+ * @author Team Riju
+ * 
  * A generic node class for a Doubly Linked List (DLL).
  * Each node contains an element of type E and references to 
  * both the next and previous nodes in the list, allowing for
