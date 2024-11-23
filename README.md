@@ -34,6 +34,7 @@ This project is part of SAIT's Object-Oriented Programming 3 (CRPG 304) course.
 
 ## How to Run the Program
 
+### Running the program in Eclipse IDE
 1. Right-click on `XMLParser.java` in the Project Explorer
 2. Select `Run as` from the context menu
 3. Click `Run configurations...`
@@ -49,9 +50,21 @@ This project is part of SAIT's Object-Oriented Programming 3 (CRPG 304) course.
    ```
 7. Click the `Run` button
 
+### Running the .jar file
+
+1. verify that you have Java installed by running:
+   ```
+   java --version
+   ```
+2. In a terminal, navigate to the directory containing the `Parser.jar` file
+3. Run the command:
+   ```
+   java -jar Sort.jar sample1.xml
+   ```
+   
 ### Notes
 - Use Windows-style backslashes (`\`) in the file path
-- Make sure to include the full path starting from the `res` directory
+- Make sure to include the full path, relative to where the program is located
 - The program accepts only one XML file as input at a time
 
 ## Project Structure
