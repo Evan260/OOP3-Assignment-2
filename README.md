@@ -32,37 +32,53 @@ This project is part of SAIT's Object-Oriented Programming 3 (CRPG 304) course.
    - Select the root directory
    - Click Finish
 
-## Usage
+## How to Run the Program
 
-```bash
-java -jar Parser.jar input.xml
-```
+1. Right-click on `XMLParser.java` in the Project Explorer
+2. Select `Run as` from the context menu
+3. Click `Run configurations...`
+4. Click the `Arguments` tab
+5. In the "Program arguments" field, enter a command:
+ 
+   ```
+   res\sample1.xml
+   ```
+   Or
+   ```
+   res\sample2.xml
+   ```
+7. Click the `Run` button
 
-The parser will analyze the XML file and output any syntax errors found, including:
-- Missing closing tags
-- Mismatched tag pairs
-- Improper nesting
-- Multiple root elements
+### Notes
+- Use Windows-style backslashes (`\`) in the file path
+- Make sure to include the full path starting from the `res` directory
+- The program accepts only one XML file as input at a time
 
 ## Project Structure
 
 ```
 src/
-├── ADT
+├── appDomain/
+│   └── XMLParser.java
+├── exceptions/
+│   └── EmptyQueueException.java
+├── implementations/
+│   ├── MyArrayList.java
+│   ├── MyDLL.java
+│   ├── MyDLLNode.java
+│   ├── MyQueue.java
+│   └── MyStack.java
+├── utilities/
+│   ├── Iterator.java
 │   ├── ListADT.java
 │   ├── QueueADT.java
-│   ├── XMLParser.java
 │   └── StackADT.java
-│── DLL
-│   ├── MyDLL.java
-│   └── MyDLLNode.java
-│── exceptions/
-│   └── EmptyQueueException.java
-└── Implementations
-    ├── Iterator.java
-    ├── MyArrayList.java
-    └── MyStack.java
-
+└── test/
+    └── unitTests/
+        ├── ArrayListTest.java
+        ├── DLLTest.java
+        ├── QueueTest.java
+        └── StackTest.java
 ```
 
 ## Implementation Details
@@ -79,9 +95,4 @@ src/
 
 ## Testing
 
-Run the included JUnit tests to verify data structure implementations:
-
-```bash
-cd project_directory
-java org.junit.runner.JUnitCore utilities.MyDLLTest
-```
+Run the included JUnit tests to verify data structure implementations
